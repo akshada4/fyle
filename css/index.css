@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@400;700&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 @font-face {
 	font-family: "Aktiv Grotesk";
@@ -9,6 +10,10 @@
 @font-face {
 	font-family: "Aktiv Grotesk Bold";
 	src: url("../fonts/AktivGroteskBold.woff") format("woff");
+}
+
+body {
+	margin: 0;
 }
 
 :root {
@@ -36,16 +41,14 @@
 }
 
 .first-content h1 {
-	font: normal normal bold 60px/80px Cormorant SC;
+	font: normal normal bold 55px/80px Cormorant SC Bold;
 	width: 614px;
-	height: 140px;
 	margin: 39px 0 0 0;
 }
 
 .first-content p {
 	font: normal normal normal 16px/30px Poppins;
 	width: 584px;
-	height: 83px;
 	margin: 50px 0 0 0;	
 }
 
@@ -206,3 +209,190 @@ label {
 	padding-left: 1px;
 }
 
+.second-content {
+	margin-top: 200px;
+	width: 1612px;
+    margin-left: auto;
+}
+
+.second-content h3 {
+	color: var(--pink-shade);
+	font: normal normal 600 24px/26px Cormorant SC;
+	margin: 0;
+	width: 156px;
+}
+
+.second-content h2 {
+	font: normal normal bold 45px/65px Cormorant SC Bold;
+	width: 450px;
+	margin-top: 40px;
+	margin-bottom: 0;
+}
+
+.wwd p {
+	font: normal normal normal 16px/30px Poppins;
+	vertical-align: top;
+	margin-top: 53px;
+	width: 584px;
+	margin-left: 145px;
+	margin-bottom: 0;
+}
+.cards {
+	margin-top: 60px;
+}
+
+.card {
+	height: 526px;
+	width: 370px;
+	margin-left: 30px;
+	position: relative;
+}
+
+.wwd-img {
+	height: 100%;
+	width: 100%;
+}
+
+.wwd{
+	padding-left: 25px;
+}
+
+.wwd-svg{
+	padding-left: 25px;
+	margin-top: 30px;
+}
+
+.svg {
+	padding: 11px 11px;
+}
+
+.new-card {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: var(--pink-shade);
+	border-radius: 5px;
+}
+
+.hidden-card {
+	display: none;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+    padding-top: 116px;
+    border-radius: 5px;
+    background: var(--pink-shade);
+ }
+
+ .hidden-card h4 {
+ 	margin: 36.42px 0 0 0;
+ 	font-size: 24px;
+ 	line-height: 26px;
+ 	font-family: Cormorant SC;
+ 	color: white;
+ }
+
+ .hidden-card p {
+ 	font-size: 16px;
+ 	padding-top: 21px;
+ 	line-height: 30px;
+ 	font-family: Poppins;
+ 	width: 320px;
+ 	margin:	auto;
+ 	color: white;
+ }
+
+ .hidden-card span {
+ 	font-size: 14px;
+    color: var(--pink-shade);
+    margin-right: 16px;
+    line-height: 26px;
+ }
+
+ .read-more {
+ 	display: block;
+ 	text-decoration: none;
+ 	width: 185px;
+	background: white;
+	margin: auto;
+	font-family: 'Poppins';
+	padding: 15px 0;
+	margin-top: 53.92px;
+	cursor: pointer;
+ }
+
+ .end-note {
+ 	text-align: center;
+ }
+
+ .end-note h3 {
+ 	margin: 200px 0 0 0;
+ 	font-size: 24px;
+ 	font-family: Cormorant SC;
+ 	line-height: 26px;
+ 	color: var(--pink-shade);
+ }
+
+ .end-note h2 {
+ 	margin: 40px 0 0 0;
+ 	font-size: 45px;
+ 	font-family: Cormorant SC Bold;
+ 	line-height: 65px;
+ }
+
+.end-note div {
+	width: 831px;
+ 	text-align: left;
+ 	margin: 60px auto 0 auto;
+ 	position: relative;
+}
+
+.end-note img {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.end-note p {
+ 	font-size: 20px;
+ 	line-height: 34px;
+ 	font-family: Poppins;
+ 	width: 831px;
+ 	text-align: left;
+ 	padding-top: 16px;
+ 	margin: 0 0 24px 0;
+ }
+
+.end-note span:first-of-type {
+ 	font-size: 20px;
+ 	line-height: 34px;
+ 	color: var(--pink-shade);
+ 	font-family: Poppins;
+ 	font-weight: 700;
+ }
+
+.end-note span:last-of-type {
+ 	font-size: 20px;
+ 	line-height: 34px;
+ 	color: #808080;
+ 	font-family: Poppins;
+ }
+
+ footer {
+ 	position: relative;
+    text-align: center;
+    margin-top: 100px;
+    overflow-x: hidden;
+ }
+ 
+ footer img {
+ 	margin: auto;
+    position: absolute;
+    top: calc(50% - (56px /2));
+    left: calc(50% - (1170px / 2));
+ }
