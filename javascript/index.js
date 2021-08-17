@@ -48,6 +48,28 @@ const cardsEventListener = (cards) => {
 	}
 }
 
+const changeImage = (e) => {
+	const images = {img1:'images/image.png',
+					img2: 'images/image1.png',
+					img3: 'images/image2.png'
+				}
+	const infoCard = e.currentTarget;
+	const img = document.querySelector('.fourth-content img');
+	const infoCardId= infoCard.id;
+	const newImg = images[infoCardId];
+
+	img.src = newImg;
+	infoCard.setAttribute('style', 'background-color: var(--pink-shade');
+	document.querySelector(`#${infoState}`).setAttribute('style', 'background-color: #F6F6F6')
+
+	infoState = infoCardId;
+}
+
+const imageInfoListener = (info) => {
+	for(let i = 0; i<info.length; i++)
+		info[i].addEventListener('click', changeImage);
+}
+
 const email = document.querySelector('#email');
 const firstName = document.querySelector('#first-name');
 const lastName =  document.querySelector('#last-name');
@@ -63,6 +85,9 @@ lastName.addEventListener('focusout', focusOutChangeLabel);
 const contactBtn = document.querySelector('#contact');
 contactBtn.addEventListener('click', displayForm);
 
+const imageInfo = document.querySelectorAll('.fourth-content-img-info div');
+let infoState = 'img1';
+imageInfoListener(imageInfo);
+
 const cards = document.querySelectorAll('.card');
-let changedCard = true;
 cardsEventListener(cards);
