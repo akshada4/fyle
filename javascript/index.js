@@ -76,23 +76,6 @@ const slideImages = (e) => {
 	const translateValue = 108 * (parseInt(e.target.id)-1);
 	for(let i = 0 ; i < images.length ; i++)
 		images[i].setAttribute('style', `transform: translateX(${translateValue - 216}%)`);
-
-	if(e.target.id === '1') {
-		document.querySelector('#last-img-copy').className += ' hidden';
-		document.querySelector('#second-last-img-copy').className += ' hidden';
-	}
-	else if(e.target.id === '2') {
-		document.querySelector('#last-img-copy').className = document
-								.querySelector('#last-img-copy').className.split('hidden')[0]
-		document.querySelector('#second-last-img-copy').className += ' hidden';
-	}
-	else if(e.target.id === '3') {
-		document.querySelector('#last-img-copy').className = document
-								.querySelector('#last-img-copy').className.split('hidden')[0];
-		document.querySelector('#second-last-img-copy').className = document
-								.querySelector('#last-img-copy').className.split('hidden')[0];
-								}
-
 }
 
 const changeSliderBtn = (e) => {
