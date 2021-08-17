@@ -193,6 +193,7 @@ label {
 	border-radius: 6px;
 	width: 385.9px;
 	height: 52px;
+	cursor: pointer;
 }
 
 .check-box {
