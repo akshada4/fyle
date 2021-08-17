@@ -14,7 +14,8 @@ const focusOutChangeLabel = (e) => {
 
 const displayForm = () => {
 	const form = document.querySelector('.overlay');
-	form.setAttribute('style', 'display: block');
+	form.setAttribute('style', 'display: block');	
+	document.querySelector('html').style.overflow = 'hidden';
 }
 
 const getNewCard = (e) => {
@@ -55,12 +56,12 @@ const changeImage = (e) => {
 				}
 	const infoCard = e.currentTarget;
 	const img = document.querySelector('.fourth-content img');
-	const infoCardId= infoCard.id;
+	const infoCardId = infoCard.id;
 	const newImg = images[infoCardId];
 
 	img.src = newImg;
-	infoCard.setAttribute('style', 'background-color: var(--pink-shade');
-	document.querySelector(`#${infoState}`).setAttribute('style', 'background-color: #F6F6F6')
+	infoCard.setAttribute('style', 'background-color: var(--pink-shade); color: white;');
+	document.querySelector(`#${infoState}`).setAttribute('style', 'background-color: #F6F6F6; color: black')
 
 	infoState = infoCardId;
 }
@@ -68,6 +69,49 @@ const changeImage = (e) => {
 const imageInfoListener = (info) => {
 	for(let i = 0; i<info.length; i++)
 		info[i].addEventListener('click', changeImage);
+}
+
+const slideImages = (e) => {
+	const images = document.querySelectorAll('.card');
+	const translateValue = 108 * (parseInt(e.target.id)-1);
+	for(let i = 0 ; i < images.length ; i++)
+		images[i].setAttribute('style', `transform: translateX(${translateValue - 216}%)`);
+
+	if(e.target.id === '1') {
+		document.querySelector('#last-img-copy').className += ' hidden';
+		document.querySelector('#second-last-img-copy').className += ' hidden';
+	}
+	else if(e.target.id === '2') {
+		document.querySelector('#last-img-copy').className = document
+								.querySelector('#last-img-copy').className.split('hidden')[0]
+		document.querySelector('#second-last-img-copy').className += ' hidden';
+	}
+	else if(e.target.id === '3') {
+		document.querySelector('#last-img-copy').className = document
+								.querySelector('#last-img-copy').className.split('hidden')[0];
+		document.querySelector('#second-last-img-copy').className = document
+								.querySelector('#last-img-copy').className.split('hidden')[0];
+								}
+
+}
+
+const changeSliderBtn = (e) => {
+		e.target.src = 'svg/1-2.svg';
+		e.target.className = "";
+		const prevSlide = document.getElementById(sliderBtnId);
+		prevSlide.src = 'svg/2-2.svg';
+		prevSlide.className = 'svg';
+		sliderBtnId = e.target.id;
+}
+
+const sliderBtnsListener = (btns) => {
+	for(let i = 0; i<btns.length; i++){
+		btns[i].addEventListener('click', (e) => {
+			slideImages(e);
+			if(e.target.id !== sliderBtnId)
+				changeSliderBtn(e);
+		})
+	}
 }
 
 const email = document.querySelector('#email');
@@ -86,8 +130,13 @@ const contactBtn = document.querySelector('#contact');
 contactBtn.addEventListener('click', displayForm);
 
 const imageInfo = document.querySelectorAll('.fourth-content-img-info div');
-let infoState = 'img1';
+let infoState = 'img1'; //id 
 imageInfoListener(imageInfo);
 
 const cards = document.querySelectorAll('.card');
 cardsEventListener(cards);
+
+const sliderBtns = document.querySelectorAll('.wwd-svg img');
+let sliderBtnId = '1';
+let sliderBtnState = 1; // id of slider btn
+sliderBtnsListener(sliderBtns);
