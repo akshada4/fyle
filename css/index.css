@@ -20,7 +20,7 @@
 html, body {
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
+	width: 1920px;
 }
 
 .align-right {
@@ -43,7 +43,6 @@ h3 {
 
 .first-content {
 	margin-left: 375px;
-	width: 1618px;
 }
 
 .first-content h2 {
@@ -231,6 +230,7 @@ label {
 .second-content {
 	margin-top: 200px;
    margin-left: 375px;
+   overflow-x: hidden;
 }
 
 .second-content h2 {
@@ -552,7 +552,6 @@ label {
 footer {
  	position: relative;
    text-align: center;
-   overflow-x: hidden;
 }
  
 footer img {
