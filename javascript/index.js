@@ -104,7 +104,6 @@ const changeCheckBox = (e) => {
 		const img = document.createElement('img');
 		img.src = 'svg/tick.svg';
 		img.className = 'tick-img';
-		box.setAttribute('style', 'background: var(--pink-shade)');
 		box.appendChild(img);
 	}
 	else {
