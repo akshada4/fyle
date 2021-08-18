@@ -42,7 +42,7 @@ h3 {
 }
 
 .first-content {
-	text-align: center;
+	margin-left: 375px;
 	margin-top: 100px;
 }
 
@@ -87,7 +87,6 @@ h3 {
 .first-content div:last-child {
 	width: 487px;
 	height: 737px;
-	/*margin-top: 100px;*/
    margin-left: 55px;
    display: inline-flex;
    overflow: hidden;
@@ -127,6 +126,7 @@ h3 {
 #contact-form h2 {
 	font-size: 20px;
 	margin: 0;
+	padding-left: 1px;
 	margin-bottom: 14px;
 	font-family: Aktiv Grotesk Bold;
 }
@@ -230,7 +230,7 @@ label {
 
 .second-content {
 	margin-top: 200px;
-   margin-left: 375px;
+   margin-left: 373px;
 }
 
 .second-content h2 {
