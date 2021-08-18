@@ -16,6 +16,7 @@ const displayForm = () => {
 	const form = document.querySelector('.overlay');
 	form.setAttribute('style', 'display: block');	
 	document.querySelector('html').style.overflow = 'hidden';
+	document.querySelector('html').scrollIntoView(true);
 }
 
 const getNewCard = (e) => {
