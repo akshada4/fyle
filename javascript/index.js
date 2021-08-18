@@ -97,6 +97,23 @@ const sliderBtnsListener = (btns) => {
 	}
 }
 
+const changeCheckBox = (e) => {
+	const box = e.currentTarget;
+	if(!checkBoxState) {
+		checkBoxState = 1;
+		const img = document.createElement('img');
+		img.src = 'svg/tick.svg';
+		img.className = 'tick-img';
+		box.setAttribute('style', 'background: var(--pink-shade)');
+		box.appendChild(img);
+	}
+	else {
+		checkBoxState = 0;
+		box.querySelector('.tick-img').remove();
+		box.setAttribute('style', 'background: transparent');
+	}
+}
+
 const email = document.querySelector('#email');
 const firstName = document.querySelector('#first-name');
 const lastName =  document.querySelector('#last-name');
@@ -123,3 +140,7 @@ const sliderBtns = document.querySelectorAll('.wwd-svg img');
 let sliderBtnId = '1';
 let sliderBtnState = 1; // id of slider btn
 sliderBtnsListener(sliderBtns);
+
+const checkBox = document.querySelector('.check-box-span');
+let checkBoxState = false; //toggle
+checkBox.addEventListener('click', changeCheckBox);
