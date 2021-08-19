@@ -196,12 +196,13 @@ label {
 }
 
 .check-box {
-	width: 14.5px;
-   height: 14.5px;
+	width: 14px;
+   height: 14px;
    position: absolute;
-   top: -3.5px;
-   left: -4.5px;
+   top: -1.5px;
+   left: -2.5px;
    opacity: 0;
+   cursor: default;
 }
 
 .check-box-span {
