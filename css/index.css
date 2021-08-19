@@ -85,19 +85,13 @@ h3 {
 }
 
 .first-content div:last-child {
-	width: 487px;
-	height: 737px;
-   margin-left: 55px;
-   display: inline-flex;
-   overflow: hidden;
-   position: relative;
+   margin-left: 68px;
    border-radius: 5px;
 }
 
 .first-content img {
-	height: 100%;
-	position: absolute;
-   left: -180px;
+	width: 487px;
+	height: 737px;
 }
 
 .overlay {
@@ -229,7 +223,8 @@ label {
 }
 
 .second-content {
-	margin-top: 200px;
+	margin-top: 100px;
+	padding-top: 100px;
    margin-left: 373px;
 }
 
@@ -355,7 +350,7 @@ label {
 
 .third-content {
  	text-align: center;
- 	margin-top: 270px;
+ 	margin-top: 200px;
 }
 
 .third-content h3 {
@@ -392,7 +387,7 @@ label {
 }
 
 .fourth-content {
- 	margin: 180px auto 120px auto;
+ 	margin: 100px auto 120px auto;
  	text-align: center;
 }
 
@@ -501,7 +496,7 @@ label {
 
 .end-note {
 	text-align: center;
-	padding: 100px 0;
+	margin: 100px 0;
 }
 
 .end-note h2 {
