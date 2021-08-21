@@ -1,7 +1,11 @@
-const focusChangeLabel = (e) => {
+const changeLabelAndValidationDisplay = (e) => {
 	const label = e.target.nextElementSibling;
 	label.textContent = label.textContent.split('*')[0];
 	label.setAttribute('style', 'transform: translateY(-100%);');
+	if (error.childNodes.length > 0){
+		document.querySelectorAll('#form input').forEach(item => item.setAttribute('style', 'border-color: #6F718F99'));
+		error.innerHTML = '';
+	}
 }
 
 const focusOutChangeLabel = (e) => {
@@ -74,9 +78,9 @@ const imageInfoListener = (info) => {
 
 const slideImages = (e) => {
 	const images = document.querySelectorAll('.card');
-	const translateValue = 108 * (parseInt(e.target.id)-1);
+	const translateValue = -108 * (parseInt(e.target.id)-1);
 	for(let i = 0 ; i < images.length ; i++)
-		images[i].setAttribute('style', `transform: translateX(${translateValue - 216}%)`);
+		images[i].setAttribute('style', `transform: translateX(${translateValue}%)`);
 }
 
 const changeSliderBtn = (e) => {
@@ -105,6 +109,7 @@ const changeCheckBox = (e) => {
 		const img = document.createElement('img');
 		img.src = 'svg/tick.svg';
 		img.className = 'tick-img';
+		box.setAttribute('style', 'background: var(--form-pink)');
 		box.insertBefore(img, box.firstChild);
 	}
 	else {
@@ -115,13 +120,38 @@ const changeCheckBox = (e) => {
 	box.querySelector('input').value = checkBoxState;
 }
 
+const changeBorderOnValidation = (element) => {
+	element.setAttribute('style', 'border-color: red');
+}
+
+const validation = (e) => {
+	const allowedEmail = /\S+@\S+\.\S+/;
+	error.innerHTML = '';
+	if (!allowedEmail.test(email.value) && email.value) {
+		e.preventDefault();
+		error.innerHTML += `<span>Email entered is not valid.</span>`;
+		changeBorderOnValidation(email);
+	}
+	if (!(firstName.value) || !(lastName.value) || !(email.value)) {
+		e.preventDefault();
+		error.innerHTML += `<span> All fields must be filled.</span>`;
+		if(!firstName.value)
+			changeBorderOnValidation(firstName);
+		if(!lastName.value)
+			changeBorderOnValidation(lastName);
+		if(!email.value)
+			changeBorderOnValidation(email);
+	}
+}
+
 const email = document.querySelector('#email');
 const firstName = document.querySelector('#first-name');
 const lastName =  document.querySelector('#last-name');
+const error = document.querySelector('#error');
 
-email.addEventListener('focus', focusChangeLabel);
-firstName.addEventListener('focus', focusChangeLabel);
-lastName.addEventListener('focus', focusChangeLabel);
+email.addEventListener('focus', changeLabelAndValidationDisplay);
+firstName.addEventListener('focus', changeLabelAndValidationDisplay);
+lastName.addEventListener('focus', changeLabelAndValidationDisplay);
 
 email.addEventListener('focusout', focusOutChangeLabel);
 firstName.addEventListener('focusout', focusOutChangeLabel);
@@ -145,3 +175,6 @@ sliderBtnsListener(sliderBtns);
 const checkBox = document.querySelector('.check-box-span');
 let checkBoxState = false; //toggle
 checkBox.addEventListener('click', changeCheckBox);
+
+const form = document.querySelector('#form');
+form.addEventListener('submit', validation);

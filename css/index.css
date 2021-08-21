@@ -15,12 +15,12 @@
 }
 :root {
 	--pink-shade: #FF3147;
+	--form-pink: #FF3366;
 }
 
 html, body {
 	margin: 0;
 	padding: 0;
-	width: 1920px;
 }
 
 .align-right {
@@ -42,7 +42,7 @@ h3 {
 }
 
 .first-content {
-	margin-left: 375px;
+	text-align: center;
 	margin-top: 100px;
 }
 
@@ -125,7 +125,7 @@ h3 {
 	font-family: Aktiv Grotesk Bold;
 }
 
-#contact-form form div {
+.first-name-div, .last-name-div, .email-div, .checkbox-div {
 	position: relative;
 	font-family: Aktiv Grotesk;
 }
@@ -185,7 +185,7 @@ label {
 
 .form-btn {
 	font-size: 18px;
-	background: var(--pink-shade);
+	background: var(--form-pink);
 	color: #FFFFFF;
 	font-family: Aktiv Grotesk Bold;
 	border: none;
@@ -209,7 +209,7 @@ label {
 	display: inline-block;
    height: 12.5px;
    width: 12.5px;
-   border: 1.5px solid var(--pink-shade);
+   border: 1.5px solid var(--form-pink);
    border-radius: 3px;
    position: relative;
 }
@@ -226,7 +226,8 @@ label {
 .second-content {
 	margin-top: 100px;
 	padding-top: 100px;
-   margin-left: 373px;
+   width: 1170px;
+   margin: auto;
 }
 
 .second-content h2 {
@@ -254,12 +255,13 @@ label {
 .card {
 	margin-right: 30px;
 	position: relative;
-	transition: transform 0.5s ease-out;
+	transition: transform 0.5s ease-in-out;
 }
 
 .wwd-img {
 	height: 526px;
 	width: 370px;
+	border-radius: 5px;
 }
 
 .wwd-svg{
@@ -312,9 +314,9 @@ label {
 
 .hidden-card span {
  	font-size: 14px;
-    color: var(--pink-shade);
-    margin-right: 16px;
-    line-height: 26px;
+   color: var(--pink-shade);
+   margin-right: 16px;
+   line-height: 26px;
 }
 
 .read-more {
@@ -327,26 +329,6 @@ label {
 	padding: 15px 0;
 	margin-top: 53.92px;
 	cursor: pointer;
-}
-
-#last-img-copy {
-	transform: translateX(-216%);
-}
-
-#second-last-img-copy {
-	transform: translateX(-216%);
-}
-
-.cards div:nth-child(3) {
-	transform: translateX(-216%);
-}
-
-.cards div:nth-child(4) {
-	transform: translateX(-216%);
-}
-
-.cards div:nth-child(5) {
-	transform: translateX(-216%);
 }
 
 .third-content {
@@ -547,6 +529,7 @@ label {
 footer {
  	position: relative;
    text-align: center;
+   overflow-x: hidden;
 }
  
 footer img {
@@ -554,4 +537,12 @@ footer img {
    position: absolute;
    top: calc(50% - (56px /2));
    left: calc(50% - (1170px / 2));
+}
+
+#error {
+	padding: 12.5px 0;
+   font-size: 13px;
+   position: absolute;
+   color: red;
+   font-family: 'Aktiv Grotesk';
 }
