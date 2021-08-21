@@ -42,6 +42,7 @@ h3 {
 }
 
 .first-content {
+	cursor: default;
 	text-align: center;
 	margin: 100px 0;
 }
@@ -227,6 +228,7 @@ label {
 	padding-top: 100px;
    width: 1170px;
    margin: auto;
+   cursor: default;
 }
 
 .second-content h2 {
@@ -331,6 +333,7 @@ label {
 }
 
 .third-content {
+	cursor: default;
  	text-align: center;
  	margin-top: 200px;
 }
@@ -369,6 +372,7 @@ label {
 }
 
 .fourth-content {
+	cursor: default;
  	margin: 100px auto 120px auto;
  	text-align: center;
 }
@@ -427,7 +431,7 @@ label {
 .fifth-content {
 	text-align: center;
 	padding: 100px 0;
-
+	cursor: default;
 }
 
 .fifth-content h3 {
@@ -479,6 +483,7 @@ label {
 .end-note {
 	text-align: center;
 	margin: 100px 0;
+	cursor: default;
 }
 
 .end-note h2 {
