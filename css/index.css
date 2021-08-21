@@ -43,7 +43,7 @@ h3 {
 
 .first-content {
 	text-align: center;
-	margin-top: 100px;
+	margin: 100px 0;
 }
 
 .first-content h2 {
@@ -224,7 +224,6 @@ label {
 }
 
 .second-content {
-	margin-top: 100px;
 	padding-top: 100px;
    width: 1170px;
    margin: auto;
