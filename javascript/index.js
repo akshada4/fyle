@@ -109,13 +109,11 @@ const changeCheckBox = (e) => {
 		const img = document.createElement('img');
 		img.src = 'svg/tick.svg';
 		img.className = 'tick-img';
-		box.setAttribute('style', 'background: var(--form-pink)');
 		box.insertBefore(img, box.firstChild);
 	}
 	else {
 		checkBoxState = 0;
 		box.querySelector('.tick-img').remove();
-		box.setAttribute('style', 'background: transparent');
 	}
 	box.querySelector('input').value = checkBoxState;
 }
